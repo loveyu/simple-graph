@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>488</width>
+    <height>331</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Graph Edit</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="PainterWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>201</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="MyOpenGL" name="opengl">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>211</width>
+      <height>181</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>488</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionClear"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuDraw">
+    <property name="title">
+     <string>Draw</string>
+    </property>
+    <addaction name="actionLine"/>
+    <addaction name="actionRect"/>
+    <addaction name="actionCircle"/>
+    <addaction name="actionOval"/>
+    <addaction name="actionTriangle"/>
+    <addaction name="actionPolygon"/>
+   </widget>
+   <widget class="QMenu" name="menuGraphEdit">
+    <property name="title">
+     <string>GraphEdit</string>
+    </property>
+    <addaction name="actionFill"/>
+    <addaction name="actionErase"/>
+    <addaction name="separator"/>
+    <addaction name="actionToBitmap"/>
+   </widget>
+   <widget class="QMenu" name="menuVectorEdit">
+    <property name="title">
+     <string>VectorEdit</string>
+    </property>
+    <addaction name="actionLineCut"/>
+    <addaction name="actionRevolve"/>
+    <addaction name="actionScaled"/>
+    <addaction name="actionMove"/>
+   </widget>
+   <widget class="QMenu" name="menu3D">
+    <property name="title">
+     <string>3D</string>
+    </property>
+    <addaction name="actionCube"/>
+    <addaction name="actionVertebral"/>
+    <addaction name="action3DRect"/>
+    <addaction name="separator"/>
+    <addaction name="actionTo3D"/>
+   </widget>
+   <widget class="QMenu" name="menuMatrixTransform">
+    <property name="title">
+     <string>Transform</string>
+    </property>
+    <addaction name="actionMMove"/>
+    <addaction name="actionMRotate"/>
+    <addaction name="actionMScaled"/>
+    <addaction name="separator"/>
+    <addaction name="actionMReset"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionInfo"/>
+    <addaction name="actionAuthor"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuDraw"/>
+   <addaction name="menuVectorEdit"/>
+   <addaction name="menuGraphEdit"/>
+   <addaction name="menuMatrixTransform"/>
+   <addaction name="menu3D"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="GraphTool" name="mainToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="styleSheet">
+    <string notr="true">QStatusBar { border-top: 1px solid #aaa;}</string>
+   </property>
+  </widget>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionLine">
+   <property name="text">
+    <string>Line</string>
+   </property>
+  </action>
+  <action name="actionCircle">
+   <property name="text">
+    <string>Circle</string>
+   </property>
+  </action>
+  <action name="actionOval">
+   <property name="text">
+    <string>Oval</string>
+   </property>
+  </action>
+  <action name="actionLineCut">
+   <property name="text">
+    <string>Line Cut</string>
+   </property>
+   <property name="toolTip">
+    <string>Line Cut</string>
+   </property>
+  </action>
+  <action name="actionFill">
+   <property name="text">
+    <string>Fill</string>
+   </property>
+  </action>
+  <action name="actionRevolve">
+   <property name="text">
+    <string>Revolve</string>
+   </property>
+  </action>
+  <action name="actionPolygon">
+   <property name="text">
+    <string>Polygon</string>
+   </property>
+  </action>
+  <action name="actionScaled">
+   <property name="text">
+    <string>Scaled</string>
+   </property>
+  </action>
+  <action name="actionCube">
+   <property name="text">
+    <string>Cube</string>
+   </property>
+  </action>
+  <action name="actionTriangle">
+   <property name="text">
+    <string>Triangle</string>
+   </property>
+  </action>
+  <action name="actionMove">
+   <property name="text">
+    <string>Move</string>
+   </property>
+  </action>
+  <action name="actionErase">
+   <property name="text">
+    <string>Erase</string>
+   </property>
+  </action>
+  <action name="actionClear">
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+  <action name="actionRect">
+   <property name="text">
+    <string>Rect</string>
+   </property>
+  </action>
+  <action name="actionMMove">
+   <property name="text">
+    <string>Move</string>
+   </property>
+  </action>
+  <action name="actionMRotate">
+   <property name="text">
+    <string>Rotate</string>
+   </property>
+  </action>
+  <action name="actionMScaled">
+   <property name="text">
+    <string>Scaled</string>
+   </property>
+  </action>
+  <action name="actionMReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionToBitmap">
+   <property name="text">
+    <string>ToBitmap</string>
+   </property>
+  </action>
+  <action name="actionTo3D">
+   <property name="text">
+    <string>To3D</string>
+   </property>
+  </action>
+  <action name="actionVertebral">
+   <property name="text">
+    <string>Vertebral</string>
+   </property>
+  </action>
+  <action name="action3DRect">
+   <property name="text">
+    <string>Rect</string>
+   </property>
+  </action>
+  <action name="actionAuthor">
+   <property name="text">
+    <string>Author</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>PainterWidget</class>
+   <extends>QWidget</extends>
+   <header>painterwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GraphTool</class>
+   <extends>QToolBar</extends>
+   <header>graphtool.h</header>
+  </customwidget>
+  <customwidget>
+   <class>MyOpenGL</class>
+   <extends>QOpenGLWidget</extends>
+   <header>myopengl.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
