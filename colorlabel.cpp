@@ -21,10 +21,7 @@ ColorLabel::~ColorLabel()
 void ColorLabel::mousePressEvent(QMouseEvent *event){
     event->accept();
     color = QColorDialog::getColor(color, this->parent,tr("Select you draw color"),QColorDialog::ShowAlphaChannel);
-    setStyleSheet(QString("background-color: rgba(%1, %2, %3, %4);").arg(QString::number(color.red()),
-                                                                         QString::number(color.green()),
-                                                                         QString::number(color.blue()),
-                                                                         QString::number(color.alpha())));
+    setColor(color);
 }
 
 void ColorLabel::paintEvent(QPaintEvent *e){

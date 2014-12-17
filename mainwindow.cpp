@@ -30,6 +30,7 @@ MainWindow::~MainWindow()
 void MainWindow::setActionType(ActionType type){
     action_type = type;
     int v=0;
+    QColor color;
     switch(type){
     case Normal:
         status_action->setText(tr("Normal"));
@@ -91,6 +92,9 @@ void MainWindow::setActionType(ActionType type){
             status_action->setText(tr("Fill"));
 //            v=5;
 //            ui->mainToolBar->setAction(E_Fill,&v);
+            QColor c = ui->mainToolBar->getColor()->getColor();
+            c.setAlpha(255);
+            ui->mainToolBar->getColor()->setColor(c);
         }
         break;
     case TD_Normal:
