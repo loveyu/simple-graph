@@ -306,3 +306,8 @@ void MainWindow::on_actionInfo_triggered()
 {
     QMessageBox::information(this, tr("About This Programe"), tr("A simple basic image rendering tool,\n supports several 3D presentations."), QMessageBox::Ok);
 }
+
+void MainWindow::on_actionExit_triggered()
+{
+    close();
+}

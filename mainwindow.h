@@ -77,6 +77,8 @@ private slots:
 
     void on_actionInfo_triggered();
 
+    void on_actionExit_triggered();
+
 private:
     Ui::MainWindow *ui;
     ActionType action_type=Normal;
